@@ -1,0 +1,18 @@
+# Versiones de los contenedores
+MARIADB_VERSION=10.11
+PHPMYADMIN_VERSION=latest
+
+# Puertos para PhpMyAdmin y Mariadb
+MARIADB_PORT=3306
+PHPMYADMIN_PORT=8080
+
+# Variables de configuración para el entorno de desarrollo
+MARIADB_ROOT_PASSWORD=12345Abcde
+
+# Prefijo para los contenedores
+COMPOSE_PROJECT_NAME=mariadb
+
+# Límites de recursos
+LIMITE_MEMORIA=4G
+LIMITE_UPLOAD_SIZE=1G
+LIMITE_TIMEOUT_PHP=600
