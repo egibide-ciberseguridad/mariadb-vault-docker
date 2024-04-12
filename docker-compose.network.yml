@@ -1,0 +1,4 @@
+networks:
+  default:
+    name: ${EXTERNAL_NETWORK}
+    external: true

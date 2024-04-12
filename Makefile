@@ -11,7 +11,8 @@ help: _header
 	${info }
 	@echo Opciones:
 	@echo ------------------------
-	@echo start / stop / restart
+	@echo start / start-network
+	@echo stop / restart
 	@echo ------------------------
 	@echo stats / logs / workspace
 	@echo clean
@@ -32,6 +33,11 @@ _start-command:
 	@docker compose up -d --remove-orphans
 
 start: _header _start-command _urls
+
+_start-command-network:
+	@docker compose -f docker-compose.yml -f docker-compose.network.yml up -d --remove-orphans
+
+start-network: _header _start-command-network _urls
 
 stop:
 	@docker compose stop
