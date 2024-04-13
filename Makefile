@@ -10,13 +10,13 @@ endif
 help: _header
 	${info }
 	@echo Opciones:
-	@echo ------------------------
-	@echo start / start-network
+	@echo ---------------------------------
+	@echo start / start-no-external-network
 	@echo stop / restart
-	@echo ------------------------
+	@echo ---------------------------------
 	@echo stats / logs / workspace
 	@echo clean
-	@echo ------------------------
+	@echo ---------------------------------
 
 _header:
 	@echo ---------------
@@ -32,12 +32,12 @@ _urls: _header
 _start-command:
 	@docker compose up -d --remove-orphans
 
-start: _header _start-command _urls
+start-no-external-network: _header _start-command _urls
 
 _start-command-network:
 	@docker compose -f docker-compose.yml -f docker-compose.network.yml up -d --remove-orphans
 
-start-network: _header _start-command-network _urls
+start: _header _start-command-network _urls
 
 stop:
 	@docker compose stop
